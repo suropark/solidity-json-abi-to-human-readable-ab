@@ -7,7 +7,8 @@ function App() {
     // console.log("solidityJsonAbi", solidityJsonAbi);
 
     try {
-      const humanReadableAbi = new utils.Interface(jsonNode.value).format();
+      console.log(JSON.stringify(jsonNode.value));
+      const humanReadableAbi = new utils.Interface(JSON.parse(JSON.stringify(jsonNode.value))).format();
 
       const humanAbiNode = document.getElementsByClassName("human-abi")[0];
 
